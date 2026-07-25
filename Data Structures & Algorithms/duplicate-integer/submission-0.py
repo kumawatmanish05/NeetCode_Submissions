@@ -9,6 +9,7 @@ where n is the number of elements. The space complexity is O(n) because, in the 
 This approach is preferred in interviews because it is simple, efficient, and uses hashing to achieve linear time complexity. ''' 
 
 
+#Solution 1 : Using Set  
 
 class Solution:
     def hasDuplicate(self, nums: List[int]) -> bool:
@@ -21,6 +22,16 @@ class Solution:
             hashset.add(n)
         return False 
 
+#Solution 2 : Using Sorting
+
+def containsDuplicate(nums):
+    nums.sort()
+
+    for i in range(len(nums)-1):
+        if nums[i] == nums[i+1]:
+            return True
+
+    return False
 
 
 
